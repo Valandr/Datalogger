@@ -8,5 +8,5 @@
 require 'csv'
 
 CSV.foreach(Rails.root.join('hourly_production_170411.csv'), headers: true) do |row|
-  Log.create([{ :identifier =>[0] }, { :datetime => row[1] }, { :energy => row[2] }])
+  Log.create(identifier: [0], datetime: row[1], energy: row[2])
 end
