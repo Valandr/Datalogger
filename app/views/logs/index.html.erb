@@ -1,0 +1,15 @@
+<h1>Welcome To Datalogger</h1>
+<br>
+<p>Your data's installation:</p> <p>Now is <%= Time.now %><p>
+<br>
+<h2>LOGS</h2>
+<br>
+
+<% @logs.each do |log| %>
+  <%= log.identifier %>
+  <%= log.datetime %>
+  <%= log.energy %>
+<% end %>
+
+<%= link_to "Download CSV", logs_path(format: "csv") %>
+
